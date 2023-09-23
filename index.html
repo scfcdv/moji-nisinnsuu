@@ -1,0 +1,20 @@
+<title>2進数文字変換</title>
+<link rel="icon" href="https://scfcdv.github.io/homeweb2/favicon.ico">
+<input type="text" id="inputText" placeholder="文字列を入力">
+<button onclick="convertToBinary()">2進数に変換</button>
+<p id="binaryOutput"></p>
+<input type="text" id="inputBinary" placeholder="2進数を入力">
+<button onclick="convertToText()">文字列に変換</button>
+<p id="textOutput"></p><script>
+function convertToBinary() {
+var inputText = document.getElementById('inputText').value;
+var binaryOutput = '';
+for (var i = 0; i < inputText.length; i++) {
+binaryOutput += inputText[i].charCodeAt(0).toString(2) + ' ';}
+document.getElementById('binaryOutput').innerHTML = binaryOutput;}
+function convertToText() {
+var inputBinary = document.getElementById('inputBinary').value.split(' ');
+var textOutput = '';
+for (var i = 0; i < inputBinary.length; i++) {
+textOutput += String.fromCharCode(parseInt(inputBinary[i], 2));}
+document.getElementById('textOutput').innerHTML = textOutput;}</script>
